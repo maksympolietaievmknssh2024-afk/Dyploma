@@ -1,0 +1,24 @@
+{
+  "dataset_name": "synthetic_shapes",
+  "num_samples": 200,
+  "image_size": [
+    512,
+    512
+  ],
+  "colors": [
+    "red",
+    "blue",
+    "green",
+    "yellow",
+    "purple",
+    "orange",
+    "pink",
+    "brown"
+  ],
+  "shapes": [
+    "circle",
+    "square",
+    "triangle"
+  ],
+  "description": "Synthetic dataset with simple colored shapes for training and testing"
+}

@@ -1,0 +1,31 @@
+# Requirements for GPU-enabled Diffusion Model Project
+# This file contains CUDA-enabled versions of PyTorch
+
+# CUDA-enabled PyTorch (for NVIDIA GPUs)
+# Choose the appropriate CUDA version based on your GPU drivers:
+
+# For CUDA 11.8 (recommended for most modern GPUs)
+torch>=2.0.0+cu118
+torchvision>=0.15.0+cu118
+torchaudio>=2.0.0+cu118
+
+# For CUDA 12.1 (latest, requires newer drivers)
+# torch>=2.0.0+cu121
+# torchvision>=0.15.0+cu121
+# torchaudio>=2.0.0+cu121
+
+# Other dependencies (same as CPU version)
+numpy>=1.19.0
+Pillow>=9.0.0
+tqdm>=4.64.0
+scikit-learn>=1.0.0
+
+# Hugging Face libraries
+transformers>=4.19.0
+diffusers>=0.3.0
+
+# For visualization
+matplotlib>=3.5.0
+
+# Additional GPU acceleration libraries (optional)
+accelerator>=0.20.0

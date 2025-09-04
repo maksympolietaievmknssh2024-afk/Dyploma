@@ -1,0 +1,639 @@
+{
+  "000047": {
+    "captions": [
+      "a red triangle",
+      "red triangle on gray background",
+      "simple red triangle drawing",
+      "geometric triangle in red color",
+      "simple geometric triangle in red color"
+    ],
+    "metadata": {
+      "color": "red",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000047.png"
+    }
+  },
+  "000148": {
+    "captions": [
+      "a orange circle",
+      "simple a orange circle",
+      "orange circle on gray background",
+      "simple orange circle on gray background",
+      "simple orange circle drawing"
+    ],
+    "metadata": {
+      "color": "orange",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000148.png"
+    }
+  },
+  "000119": {
+    "captions": [
+      "a red square",
+      "red square on gray background",
+      "simple red square drawing",
+      "geometric square in red color",
+      "simple geometric square in red color"
+    ],
+    "metadata": {
+      "color": "red",
+      "shape": "square",
+      "width": 512,
+      "height": 512,
+      "file_name": "000119.png"
+    }
+  },
+  "000094": {
+    "captions": [
+      "a blue circle",
+      "simple a blue circle",
+      "a bright blue circle",
+      "blue circle on gray background",
+      "simple blue circle on gray background"
+    ],
+    "metadata": {
+      "color": "blue",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000094.png"
+    }
+  },
+  "000118": {
+    "captions": [
+      "a blue square",
+      "simple a blue square",
+      "a bright blue square",
+      "blue square on gray background",
+      "simple blue square on gray background"
+    ],
+    "metadata": {
+      "color": "blue",
+      "shape": "square",
+      "width": 512,
+      "height": 512,
+      "file_name": "000118.png"
+    }
+  },
+  "000063": {
+    "captions": [
+      "a red circle",
+      "simple a red circle",
+      "a bright red circle",
+      "red circle on gray background",
+      "simple red circle drawing"
+    ],
+    "metadata": {
+      "color": "red",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000063.png"
+    }
+  },
+  "000045": {
+    "captions": [
+      "a red circle",
+      "simple a red circle",
+      "a bright red circle",
+      "red circle on gray background",
+      "simple red circle drawing"
+    ],
+    "metadata": {
+      "color": "red",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000045.png"
+    }
+  },
+  "000026": {
+    "captions": [
+      "a brown triangle",
+      "brown triangle on gray background",
+      "simple brown triangle drawing",
+      "geometric triangle in brown color"
+    ],
+    "metadata": {
+      "color": "brown",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000026.png"
+    }
+  },
+  "000127": {
+    "captions": [
+      "a brown square",
+      "brown square on gray background",
+      "simple brown square drawing",
+      "geometric square in brown color"
+    ],
+    "metadata": {
+      "color": "brown",
+      "shape": "square",
+      "width": 512,
+      "height": 512,
+      "file_name": "000127.png"
+    }
+  },
+  "000163": {
+    "captions": [
+      "a pink triangle",
+      "pink triangle on gray background",
+      "simple pink triangle on gray background",
+      "simple pink triangle drawing",
+      "geometric triangle in pink color"
+    ],
+    "metadata": {
+      "color": "pink",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000163.png"
+    }
+  },
+  "000187": {
+    "captions": [
+      "a pink square",
+      "simple a pink square",
+      "pink square on gray background",
+      "simple pink square on gray background",
+      "simple pink square drawing"
+    ],
+    "metadata": {
+      "color": "pink",
+      "shape": "square",
+      "width": 512,
+      "height": 512,
+      "file_name": "000187.png"
+    }
+  },
+  "000137": {
+    "captions": [
+      "a yellow circle",
+      "yellow circle on gray background",
+      "simple yellow circle on gray background",
+      "bright yellow circle on gray background",
+      "simple yellow circle drawing"
+    ],
+    "metadata": {
+      "color": "yellow",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000137.png"
+    }
+  },
+  "000000": {
+    "captions": [
+      "a green triangle",
+      "simple a green triangle",
+      "a bright green triangle",
+      "green triangle on gray background",
+      "simple green triangle drawing"
+    ],
+    "metadata": {
+      "color": "green",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000000.png"
+    }
+  },
+  "000048": {
+    "captions": [
+      "a blue triangle",
+      "simple a blue triangle",
+      "a bright blue triangle",
+      "blue triangle on gray background",
+      "simple blue triangle drawing"
+    ],
+    "metadata": {
+      "color": "blue",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000048.png"
+    }
+  },
+  "000049": {
+    "captions": [
+      "a blue circle",
+      "blue circle on gray background",
+      "simple blue circle on gray background",
+      "bright blue circle on gray background",
+      "simple blue circle drawing"
+    ],
+    "metadata": {
+      "color": "blue",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000049.png"
+    }
+  },
+  "000037": {
+    "captions": [
+      "a red triangle",
+      "red triangle on gray background",
+      "simple red triangle on gray background",
+      "bright red triangle on gray background",
+      "simple red triangle drawing"
+    ],
+    "metadata": {
+      "color": "red",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000037.png"
+    }
+  },
+  "000184": {
+    "captions": [
+      "a brown square",
+      "simple a brown square",
+      "brown square on gray background",
+      "simple brown square drawing",
+      "geometric square in brown color"
+    ],
+    "metadata": {
+      "color": "brown",
+      "shape": "square",
+      "width": 512,
+      "height": 512,
+      "file_name": "000184.png"
+    }
+  },
+  "000064": {
+    "captions": [
+      "a purple triangle",
+      "purple triangle on gray background",
+      "simple purple triangle on gray background",
+      "simple purple triangle drawing",
+      "geometric triangle in purple color"
+    ],
+    "metadata": {
+      "color": "purple",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000064.png"
+    }
+  },
+  "000016": {
+    "captions": [
+      "a red triangle",
+      "simple a red triangle",
+      "a bright red triangle",
+      "red triangle on gray background",
+      "simple red triangle on gray background"
+    ],
+    "metadata": {
+      "color": "red",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000016.png"
+    }
+  },
+  "000087": {
+    "captions": [
+      "a yellow triangle",
+      "simple a yellow triangle",
+      "a bright yellow triangle",
+      "yellow triangle on gray background",
+      "simple yellow triangle drawing"
+    ],
+    "metadata": {
+      "color": "yellow",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000087.png"
+    }
+  },
+  "000117": {
+    "captions": [
+      "a green circle",
+      "simple a green circle",
+      "a bright green circle",
+      "green circle on gray background",
+      "simple green circle drawing"
+    ],
+    "metadata": {
+      "color": "green",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000117.png"
+    }
+  },
+  "000158": {
+    "captions": [
+      "a green triangle",
+      "simple a green triangle",
+      "a bright green triangle",
+      "green triangle on gray background",
+      "simple green triangle on gray background"
+    ],
+    "metadata": {
+      "color": "green",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000158.png"
+    }
+  },
+  "000197": {
+    "captions": [
+      "a red circle",
+      "simple a red circle",
+      "a bright red circle",
+      "red circle on gray background",
+      "simple red circle drawing"
+    ],
+    "metadata": {
+      "color": "red",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000197.png"
+    }
+  },
+  "000084": {
+    "captions": [
+      "a purple triangle",
+      "purple triangle on gray background",
+      "simple purple triangle drawing",
+      "geometric triangle in purple color"
+    ],
+    "metadata": {
+      "color": "purple",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000084.png"
+    }
+  },
+  "000168": {
+    "captions": [
+      "a purple circle",
+      "purple circle on gray background",
+      "simple purple circle on gray background",
+      "simple purple circle drawing",
+      "geometric circle in purple color"
+    ],
+    "metadata": {
+      "color": "purple",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000168.png"
+    }
+  },
+  "000109": {
+    "captions": [
+      "a blue triangle",
+      "blue triangle on gray background",
+      "simple blue triangle on gray background",
+      "bright blue triangle on gray background",
+      "simple blue triangle drawing"
+    ],
+    "metadata": {
+      "color": "blue",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000109.png"
+    }
+  },
+  "000090": {
+    "captions": [
+      "a green circle",
+      "simple a green circle",
+      "a bright green circle",
+      "green circle on gray background",
+      "simple green circle on gray background"
+    ],
+    "metadata": {
+      "color": "green",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000090.png"
+    }
+  },
+  "000106": {
+    "captions": [
+      "a pink circle",
+      "simple a pink circle",
+      "pink circle on gray background",
+      "simple pink circle on gray background",
+      "simple pink circle drawing"
+    ],
+    "metadata": {
+      "color": "pink",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000106.png"
+    }
+  },
+  "000115": {
+    "captions": [
+      "a pink circle",
+      "simple a pink circle",
+      "pink circle on gray background",
+      "simple pink circle on gray background",
+      "simple pink circle drawing"
+    ],
+    "metadata": {
+      "color": "pink",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000115.png"
+    }
+  },
+  "000061": {
+    "captions": [
+      "a blue square",
+      "simple a blue square",
+      "a bright blue square",
+      "blue square on gray background",
+      "simple blue square drawing"
+    ],
+    "metadata": {
+      "color": "blue",
+      "shape": "square",
+      "width": 512,
+      "height": 512,
+      "file_name": "000061.png"
+    }
+  },
+  "000018": {
+    "captions": [
+      "a brown circle",
+      "simple a brown circle",
+      "brown circle on gray background",
+      "simple brown circle drawing",
+      "geometric circle in brown color"
+    ],
+    "metadata": {
+      "color": "brown",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000018.png"
+    }
+  },
+  "000183": {
+    "captions": [
+      "a green circle",
+      "simple a green circle",
+      "a bright green circle",
+      "green circle on gray background",
+      "simple green circle drawing"
+    ],
+    "metadata": {
+      "color": "green",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000183.png"
+    }
+  },
+  "000057": {
+    "captions": [
+      "a yellow circle",
+      "yellow circle on gray background",
+      "simple yellow circle on gray background",
+      "bright yellow circle on gray background",
+      "simple yellow circle drawing"
+    ],
+    "metadata": {
+      "color": "yellow",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000057.png"
+    }
+  },
+  "000012": {
+    "captions": [
+      "a orange triangle",
+      "orange triangle on gray background",
+      "simple orange triangle on gray background",
+      "simple orange triangle drawing",
+      "geometric triangle in orange color"
+    ],
+    "metadata": {
+      "color": "orange",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000012.png"
+    }
+  },
+  "000140": {
+    "captions": [
+      "a orange triangle",
+      "orange triangle on gray background",
+      "simple orange triangle on gray background",
+      "simple orange triangle drawing",
+      "geometric triangle in orange color"
+    ],
+    "metadata": {
+      "color": "orange",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000140.png"
+    }
+  },
+  "000177": {
+    "captions": [
+      "a purple square",
+      "purple square on gray background",
+      "simple purple square on gray background",
+      "simple purple square drawing",
+      "geometric square in purple color"
+    ],
+    "metadata": {
+      "color": "purple",
+      "shape": "square",
+      "width": 512,
+      "height": 512,
+      "file_name": "000177.png"
+    }
+  },
+  "000182": {
+    "captions": [
+      "a yellow square",
+      "simple a yellow square",
+      "a bright yellow square",
+      "yellow square on gray background",
+      "simple yellow square on gray background"
+    ],
+    "metadata": {
+      "color": "yellow",
+      "shape": "square",
+      "width": 512,
+      "height": 512,
+      "file_name": "000182.png"
+    }
+  },
+  "000150": {
+    "captions": [
+      "a blue triangle",
+      "simple a blue triangle",
+      "a bright blue triangle",
+      "blue triangle on gray background",
+      "simple blue triangle on gray background"
+    ],
+    "metadata": {
+      "color": "blue",
+      "shape": "triangle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000150.png"
+    }
+  },
+  "000041": {
+    "captions": [
+      "a brown circle",
+      "brown circle on gray background",
+      "simple brown circle on gray background",
+      "simple brown circle drawing",
+      "geometric circle in brown color"
+    ],
+    "metadata": {
+      "color": "brown",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000041.png"
+    }
+  },
+  "000062": {
+    "captions": [
+      "a blue circle",
+      "blue circle on gray background",
+      "simple blue circle on gray background",
+      "bright blue circle on gray background",
+      "simple blue circle drawing"
+    ],
+    "metadata": {
+      "color": "blue",
+      "shape": "circle",
+      "width": 512,
+      "height": 512,
+      "file_name": "000062.png"
+    }
+  }
+}
