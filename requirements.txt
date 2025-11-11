@@ -14,7 +14,14 @@ scikit-learn>=1.0.0
 
 # Hugging Face libraries
 transformers>=4.19.0
-diffusers>=0.3.0
+diffusers>=0.20.0
+accelerate>=0.20.0
+safetensors>=0.3.0
+
+# NLP and semantic processing
+spacy>=3.7.0
+nltk>=3.8.1
+sentence-transformers>=2.2.2
 
 # For visualization
 matplotlib>=3.5.0

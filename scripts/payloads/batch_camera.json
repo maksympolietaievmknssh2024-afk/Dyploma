@@ -1,0 +1,11 @@
+{
+  "prompt": "vintage camera on a wooden table, soft studio lighting, high detail",
+  "negative_prompt": "watermark, logo, text overlay, captions, copyright",
+  "negative_preset": "standard",
+  "generation_speed": "balanced",
+  "seed": 123454,
+  "num_candidates": 3,
+  "sampler": "dpmsolver",
+  "guidance_rescale": 0.3,
+  "use_enhancement": false
+}

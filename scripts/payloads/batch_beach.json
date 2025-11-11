@@ -1,0 +1,11 @@
+{
+  "prompt": "sunny beach with palm trees, clear sky, turquoise water",
+  "negative_prompt": "watermark, logo, text overlay, captions, copyright",
+  "negative_preset": "standard",
+  "generation_speed": "balanced",
+  "seed": 123451,
+  "num_candidates": 3,
+  "sampler": "dpmsolver",
+  "guidance_rescale": 0.3,
+  "use_enhancement": false
+}

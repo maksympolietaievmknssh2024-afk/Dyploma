@@ -1,0 +1,14 @@
+{
+  "losses": [
+    1.149030327796936
+  ],
+  "semantic_losses": [
+    0.009999999761581422
+  ],
+  "epochs_completed": 1,
+  "total_epochs": 1,
+  "best_loss": 1.149030327796936,
+  "current_lr": 5e-06,
+  "training_time_minutes": 0.4893451690673828,
+  "estimated_remaining_minutes": 0.0
+}

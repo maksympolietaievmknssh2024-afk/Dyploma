@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Image Generation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .prompt-input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+        .generate-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .generate-button:hover {
+            background-color: #45a049;
+        }
+        .cancel-button {
+            padding: 10px 20px;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            display: inline-block;
+        }
+        .cancel-button:hover { background-color: #c9302c; }
+        .cancel-button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .buttons-row { display: flex; gap: 10px; align-items: center; }
+        .result-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .image-container {
+            width: 100%;
+            max-width: 512px;
+            margin: 0 auto;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .info-section {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            font-style: italic;
+            color: #666;
+        }
+        .notice {
+            font-size: 12px;
+            color: #555;
+        }
+        .error-hint {
+            font-size: 12px;
+            color: #b00020;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Generation from Text</h1>
+    <div class="container">
+        <div class="input-section">
+            <label for="prompt">Enter your prompt (English):</label>
+            <textarea id="prompt" class="prompt-input" rows="4" placeholder="Describe the image you want to generate in English..."></textarea>
+            <div class="notice">Only English prompts are accepted.</div>
+            <div id="lang-error" class="error-hint">Only English prompts are accepted. Please translate your text.</div>
+            
+            <label for="negative-prompt">Negative prompt (optional):</label>
+            <textarea id="negative-prompt" class="prompt-input" rows="2" placeholder="What you don't want to see in the image..."></textarea>
+            
+            <label for="negative-preset">Negative prompt preset (predefined artifact filters):</label>
+            <select id="negative-preset" class="preset-select">
+                <option value="none">None</option>
+                <option value="draft">Draft Quality</option>
+                <option value="standard" selected>Standard Quality</option>
+                <option value="high">High Quality</option>
+                <option value="ultra">Ultra Quality</option>
+            </select>
+            
+            <label for="generation-speed">Generation Speed (quality <-> speed trade-off):</label>
+            <select id="generation-speed" class="preset-select">
+                <option value="fast" selected>Fast (25 steps)</option>
+                    <option value="balanced">Balanced (50 steps)</option>
+                    <option value="quality">High Quality (75 steps)</option>
+            </select>
+
+            <label for="sampler">Sampler (diffusion solver, affects look & style):</label>
+            <select id="sampler" class="preset-select">
+                <option value="auto" selected>Auto (PNDM)</option>
+                <option value="pndm">PNDM</option>
+                <option value="dpmsolver">DPMSolver (multistep)</option>
+                <option value="euler_a">Euler A (ancestral)</option>
+            </select>
+
+            <label for="guidance-rescale-input">Guidance Rescale (0-1, stabilizes high guidance):</label>
+            <input id="guidance-rescale-input" type="number" class="prompt-input" value="0.3" min="0" max="1" step="0.05" placeholder="e.g., 0.3">
+
+            <label><input id="use-enhancement" type="checkbox"> Use prompt enhancement (LLM improves phrasing/context)</label>
+            
+            <label for="seed">Seed (optional, reproducible randomness):</label>
+            <input id="seed" type="number" class="prompt-input" placeholder="e.g., 12345">
+
+            <label for="num-candidates">Best-of-N (generate N, auto-select best):</label>
+            <input id="num-candidates" type="number" class="prompt-input" value="3" min="1" max="8">
+            
+            <div class="buttons-row">
+                <button id="preset-dog" class="generate-button" style="background-color:#1976d2">Load Retriever Preset</button>
+                <button id="generate" class="generate-button">Generate Image</button>
+                <button id="cancel" class="cancel-button" disabled>Cancel</button>
+            </div>
+            <div id="loading" class="loading">Generating image... This may take some time.</div>
+        </div>
+        <div class="result-section">
+            <div id="image-container" class="image-container">
+                <!-- Generated image will be displayed here -->
+            </div>
+            <div id="info-section" class="info-section" style="display: none;">
+                <h3>Details:</h3>
+                <p><strong>Original Prompt:</strong> <span id="original-prompt"></span></p>
+                <p><strong>Enhanced Prompt:</strong> <span id="enhanced-prompt"></span></p>
+                <p><strong>Negative Prompt Used:</strong> <span id="negative-prompt-used"></span></p>
+                <p><strong>Detected Objects:</strong> <span id="detected-objects"></span></p>
+                <p><strong>Used Seed:</strong> <span id="used-seed"></span></p>
+                <p><strong>Sampler Used:</strong> <span id="sampler-used"></span></p>
+                <p><strong>Guidance Rescale:</strong> <span id="guidance-rescale-info"></span></p>
+                <p><strong>Similarity (text <-> image):</strong> <span id="similarity-score"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function containsCyrillic(text) {
+            return /[\u0400-\u04FF]/.test(text);
+        }
+
+        let currentAbortController = null;
+        const generateBtn = document.getElementById('generate');
+        const cancelBtn = document.getElementById('cancel');
+        const presetDogBtn = document.getElementById('preset-dog');
+
+        // Quick preset to reproduce the "golden retriever" result exactly
+        function loadRetrieverPreset() {
+            document.getElementById('prompt').value = 'golden retriever running on green grass, motion blur, sunny day';
+            document.getElementById('negative-prompt').value = 'watermark, logo, text, captions, copyright';
+            document.getElementById('negative-preset').value = 'standard';
+            document.getElementById('generation-speed').value = 'balanced';
+            document.getElementById('sampler').value = 'dpmsolver';
+            document.getElementById('guidance-rescale-input').value = '0.30';
+            document.getElementById('use-enhancement').checked = false;
+            document.getElementById('seed').value = '123453';
+            document.getElementById('num-candidates').value = '3';
+        }
+
+        presetDogBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            loadRetrieverPreset();
+        });
+
+        document.getElementById('generate').addEventListener('click', async () => {
+            const prompt = document.getElementById('prompt').value.trim();
+            const negativePrompt = document.getElementById('negative-prompt').value.trim();
+            const negativePreset = document.getElementById('negative-preset').value;
+            const generationSpeed = document.getElementById('generation-speed').value;
+            const seedVal = document.getElementById('seed').value.trim();
+            const numCandidates = parseInt(document.getElementById('num-candidates').value, 10) || 1;
+            const langError = document.getElementById('lang-error');
+            
+            if (!prompt) {
+                alert('Please enter a prompt');
+                return;
+            }
+
+            // English-only check
+            if (containsCyrillic(prompt)) {
+                langError.style.display = 'block';
+                alert('Only English prompts are accepted. Please translate your prompt.');
+                return;
+            } else {
+                langError.style.display = 'none';
+            }
+
+            // Show loading indicator
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('info-section').style.display = 'none';
+            document.getElementById('image-container').innerHTML = '';
+
+            // Disable generate and enable cancel
+            generateBtn.disabled = true;
+            cancelBtn.disabled = false;
+
+            currentAbortController = new AbortController();
+
+            try {
+                const requestData = { 
+                    prompt, 
+                    negative_prompt: negativePrompt,
+                    negative_preset: negativePreset,
+                    generation_speed: generationSpeed,
+                    seed: seedVal ? Number(seedVal) : null,
+                    num_candidates: numCandidates,
+                    sampler: document.getElementById('sampler').value,
+                    // Read and validate guidance_rescale from input (0–1)
+                    guidance_rescale: (() => {
+                        const valRaw = document.getElementById('guidance-rescale-input').value;
+                        let val = Number(valRaw || 0);
+                        if (!Number.isFinite(val)) val = 0;
+                        // Clamp to [0,1]
+                        if (val < 0 || val > 1) {
+                            const clamped = Math.min(1, Math.max(0, val));
+                            alert(`Guidance Rescale має бути у діапазоні 0–1. Введено: ${val}. Буде використано: ${clamped}.`);
+                            val = clamped;
+                            document.getElementById('guidance-rescale-input').value = String(clamped);
+                        }
+                        return val;
+                    })(),
+                    use_enhancement: document.getElementById('use-enhancement').checked
+                };
+                
+                const response = await fetch('/generate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestData),
+                    signal: currentAbortController.signal
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    alert(`Error: ${data.error}`);
+                    return;
+                }
+
+                // Display the image
+                document.getElementById('image-container').innerHTML = `
+                    <img src="data:image/png;base64,${data.image}" alt="Generated image">
+                `;
+
+                // Display information
+                document.getElementById('original-prompt').textContent = data.original_prompt;
+                document.getElementById('enhanced-prompt').textContent = data.enhanced_prompt;
+                document.getElementById('negative-prompt-used').textContent = data.negative_prompt_used || 'None';
+                document.getElementById('detected-objects').textContent = (data.detected_objects || []).join(', ');
+                document.getElementById('used-seed').textContent = (data.used_seed !== undefined && data.used_seed !== null) ? data.used_seed : 'random';
+                document.getElementById('similarity-score').textContent = (data.similarity !== undefined) ? data.similarity.toFixed(3) : 'n/a';
+                // New metadata
+                const samplerUsedVal = (data.sampler_used !== undefined && data.sampler_used !== null) ? data.sampler_used : 'auto';
+                document.getElementById('sampler-used').textContent = samplerUsedVal;
+                const grescale = (data.guidance_rescale !== undefined && data.guidance_rescale !== null) ? data.guidance_rescale : '0.0';
+                document.getElementById('guidance-rescale-info').textContent = grescale;
+                document.getElementById('info-section').style.display = 'block';
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    alert('Generation was canceled.');
+                } else {
+                    alert(`Error: ${error.message}`);
+                }
+            } finally {
+                // Hide loading indicator and reset controls
+                document.getElementById('loading').style.display = 'none';
+                generateBtn.disabled = false;
+                cancelBtn.disabled = true;
+                currentAbortController = null;
+            }
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            if (currentAbortController) {
+                try { currentAbortController.abort(); } catch (e) {}
+            }
+        });
+    </script>
+</body>
+</html>
+        

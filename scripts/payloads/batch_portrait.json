@@ -1,0 +1,11 @@
+{
+  "prompt": "portrait of a smiling person in natural light, shallow depth of field",
+  "negative_prompt": "watermark, logo, text overlay, captions, copyright, extra fingers, deformed",
+  "negative_preset": "standard",
+  "generation_speed": "balanced",
+  "seed": 123452,
+  "num_candidates": 3,
+  "sampler": "pndm",
+  "guidance_rescale": 0.3,
+  "use_enhancement": false
+}
