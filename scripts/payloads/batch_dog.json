@@ -1,0 +1,11 @@
+{
+  "prompt": "golden retriever running on green grass, motion blur, sunny day",
+  "negative_prompt": "watermark, logo, text, captions, copyright",
+  "negative_preset": "standard",
+  "generation_speed": "balanced",
+  "seed": 123453,
+  "num_candidates": 3,
+  "sampler": "dpmsolver",
+  "guidance_rescale": 0.3,
+  "use_enhancement": false
+}

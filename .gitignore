@@ -26,21 +26,40 @@ PIPFILE.lock
 *.pth
 *.ckpt
 
-# Generated images and outputs
-output/*.png
-output/*.jpg
-output/*.jpeg
-output/*.json
-output/*.pt
+# Generated images and outputs (ignore entire folders)
+output/
+enhanced_output/
+semantic_model_output/
+seed_test_results/
+test_results/
+outputs/
+
+# Local user caches and models (do not push)
+user_data/hf_cache/
+user_data/models/
+user_data/nltk_data/
+user_data/datasets/
+user_data/prompts/
+user_data/metadata.json
+
+# Training artifacts
+optimized_model_trained/
+optimized_model_trained_1h_best/
+optimized_model_trained_3h_best/
+enhanced_output_full/
+test_output_bf16_60/
 
 # Data files
-data/processed/images/
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.bmp
-*.tiff
+# Ignore local datasets and archives
+data/cifar-10-batches-py/
+data/cifar-10-python.tar.gz
+data/processed/
+data/**/*.jpg
+data/**/*.jpeg
+data/**/*.png
+data/**/*.gif
+data/**/*.bmp
+data/**/*.tiff
 
 # IDE
 .vscode/
